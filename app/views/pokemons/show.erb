@@ -1,11 +1,13 @@
-<h1>Edit Pokemon</h1>
+<h1>Pokemon</h1>
+
+<p><%= @pokemon.name %> - <%= @pokemon.type %> - <%= @pokemon.subtype %></p>
 
 
-<form action="/pokemons/<%=@pokemon.id %>" method="post">
-    <input type="hidden" name="_method" value="patch">
-    <label>Pokemon Name: </label>
-    <input type="text" name="pokemon[name]" value="<%=@pokemon.name%>">
-    <label>Pokemon Type: </label>
-    <input type="text" name="pokemon[type]" value="<%=@pokemon.type%>">
-    <label>Pokemon Sub-Type: </label>
-    <input type="text" name="pokemon[subtype]" value="<"
+<% if check_owner(@pokemon) %>
+    <form action="/pokemons/<%=@pokemon.id%>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete">
+    </form>
+
+    <a href="/pokemons/<%=@pokemon.id%>/edit">Edit this Pokemon</a>
+<%end %>
