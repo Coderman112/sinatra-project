@@ -23,5 +23,16 @@ class ApplicationController < Sinatra::Base
         def check_owner(obj)
             obj && obj.user == current_user
         end
+
+        def redirect_if_not_owner(obj)
+            if !check_owner(obj)
+                redirect '/pokemons'
+            end
+        end
+
+        def set_pokemon
+            @pokemon = Pokemon.find_by(id: params[:id])
+        end
+    end
     
 end
