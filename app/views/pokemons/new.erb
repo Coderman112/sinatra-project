@@ -1,0 +1,12 @@
+<h1>New Pokemon</h1>
+
+
+<form action="/pokemons" method="post">
+    <label>Pokemon Name: </label>
+    <input type="text" name="pokemon[name]" value="<%=@pokemon.name%>">
+    <label>Pokemon Type: </label>
+    <input type="text" name="pokemon[type]" value="<%=@pokemon.type%>">
+    <label>Pokemon Sub-Type: </label>
+    <input type="text" name="pokemon[subtype]" value="<%=@pokemon.subtype%>">
+    <input type="submit">
+</form>
