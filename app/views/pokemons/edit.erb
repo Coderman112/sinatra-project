@@ -1,0 +1,13 @@
+<h1>Edit Pokemon</h1>
+
+
+<form action="/pokemons/<%=@pokemon.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <label>Pokemon Name: </label>
+    <input type="text" name="pokemon[name]" value="<%=@pokemon.name%>">
+    <label>Pokemon Type: </label>
+    <input type="text" name="pokemon[type]" value="<%=@pokemon.type%>">
+    <label>Pokemon Sub-Type: </label>
+    <input type="text" name="pokemon[subtype]" value="<%=@pokemon.subtype%>">
+    <input type="submit">
+</form>
