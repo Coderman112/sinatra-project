@@ -1,6 +1,6 @@
 <h1>Pokemon</h1>
 
-<p><%= @pokemon.name %> - <%= @pokemon.type %> - <%= @pokemon.subtype %></p>
+<p><%= @pokemon.name %> - <%= @pokemon.element %>/<%= @pokemon.sub_element %></p>
 
 
 <% if check_owner(@pokemon) %>
@@ -9,5 +9,8 @@
         <input type="submit" value="Delete">
     </form>
 
-    <a href="/pokemons/<%=@pokemon.id%>/edit">Edit this Pokemon</a>
+    <a href="/pokemons/<%=@pokemon.id%>/edit">Edit this Pokemon</a><br>
+    <a href="/pokemons/new">Create a New Pokemon</a><br>
+    <a href="/users/<%=@user.id%>">Return to Your Page</a><br>
+    <a href="/logout">Logout</a>
 <%end %>

@@ -1,5 +1,5 @@
 require 'bundler/setup'
-Bundler.require(:defualt)
+Bundler.require(:default)
 
 require_all 'app'
 

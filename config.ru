@@ -1,4 +1,4 @@
-require './config/environment'
+require './app/config/environment'
 
 use Rack::MethodOverride
 use UsersController

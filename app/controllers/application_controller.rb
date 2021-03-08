@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
         end
 
         def redirect_if_not_logged_in
-            redirect '/login' unless current_user
+            # redirect '/login' unless current_user
         end
 
         def check_owner(obj)

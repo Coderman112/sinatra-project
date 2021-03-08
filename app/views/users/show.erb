@@ -1,4 +1,4 @@
-<h1>Welcome to <%= @pokemon.username %>'s Page </h1>
+<h1>Welcome to <%= @user.username %>'s Page </h1>
 
 <ul>
     <% @pokemons.each do |pokemon| %>
@@ -6,3 +6,6 @@
     <%end%>
 
 </ul>
+<a href="/pokemons/new">Create a New Pokemon</a><br>
+<a href="/logout">Logout</a><br>
+<a href="/users">View Other Users and their Pokemon</a>

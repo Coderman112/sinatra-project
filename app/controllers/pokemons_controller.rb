@@ -14,9 +14,9 @@ class PokemonsController < ApplicationController
     post '/pokemons' do
         redirect_if_not_logged_in
 
-        item = current_user.pokemons.create(params[:item])
-        if item.valid?
-            redirect "pokemons/#{item.id}"
+        pokemon = current_user.pokemons.create(params[:pokemon])
+        if pokemon.valid?
+            redirect "pokemons/#{pokemon.id}"
         else
             redirect '/pokemons/new'
         end
@@ -31,7 +31,7 @@ class PokemonsController < ApplicationController
         erb :'pokemons/show'
     end
 
-    get 'pokemons/:id/edit' do
+    get '/pokemons/:id/edit' do
         redirect_if_not_logged_in
         set_pokemon
         redirect_if_not_owner(@pokemon)
